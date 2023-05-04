@@ -20,7 +20,8 @@ def receive(event, context):
 
 
 def get_dog_url():
-    return None
+    req = requests.get('https://dog.ceo/api/breeds/image/random')
+    return req.json()['message']
 
 
 def process(message):
